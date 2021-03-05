@@ -7,7 +7,7 @@
 .App-header {
   background-color: #222;
   padding: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: white;
   text-align: center;
 }
@@ -40,7 +40,7 @@
 .City-name{
   background: linear-gradient(rgb(240, 240, 240),  rgb(224, 224, 224));
   padding: 10px 15px;
-  width: 350px;
+  width: 320px;
   font-weight:600;
 }
 
