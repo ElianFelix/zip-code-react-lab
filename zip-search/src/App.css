@@ -1,6 +1,57 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
 .App-header {
   background-color: #222;
   padding: 20px;
+  margin-bottom: 10px;
   color: white;
   text-align: center;
+}
+
+.Input-container {
+  padding: 0;
+  margin: 0 auto;
+  /* border: 2px solid #222; */
+  align-items: center;
+  justify-content:space-evenly;
+  text-align: center;
+  width: fit-content;
+}
+
+.City-box:first-of-type {
+  margin-Top: 2px;
+}
+
+.City-box {
+  padding: 0;
+  margin: 20px auto;
+  align-items: center;
+  justify-content:space-evenly;
+  border: 2px solid rgb(231, 231, 231);
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow:2px 2px 2px rgba(184, 184, 184, 0.137);
+  
+}
+
+.City-name{
+  background-color: rgb(231, 231, 231);
+  padding: 10px 15px;
+  width: 350px;
+  font-weight:600;
+}
+
+.City-info {
+  margin: 25px 15px;
+  
+}
+
+input {
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 4px;
+  box-shadow:2px 2px 2px rgba(184, 184, 184, 0.137);
 }
