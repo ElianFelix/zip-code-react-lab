@@ -22,7 +22,6 @@ function City(props) {
 
 function ZipSearchField({ onZipChange }) {
   
-
   return (
     <div className="Input-container">
       <label style={{marginRight: '6px'}}> <strong>Zip Code:</strong> </label>
