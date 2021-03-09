@@ -21,7 +21,6 @@ function City(props) {
 }
 
 function ZipSearchField({ onZipChange }) {
-  
   return (
     <div className="Input-container">
       <label style={{marginRight: '6px'}}> <strong>Zip Code:</strong> </label>
@@ -29,7 +28,6 @@ function ZipSearchField({ onZipChange }) {
     </div>
   );
 }
-
 
 class App extends Component {
   constructor(props) {
@@ -44,30 +42,30 @@ class App extends Component {
     // Make GET request for the zip resource
     // then, when you receive the result, store it in state
     if (e.target.value.length === 5 && !isNaN(Number(e.target.value))) {
-      fetch(`http://ctp-zip-api.herokuapp.com/zip/${e.target.value}`)
-        .then(response => {if (response.ok) return response.json(); else return []})
-        .then(data => { this.setState({ cities: data }); console.log(data) })
-    
+      let zip = e.target.value;
+
+      fetch(`http://ctp-zip-api.herokuapp.com/zip/${zip}`)
+        .then(response => {if (response.ok) return response.json(); else return [];})
+        .then(data => this.setState({ cities: data }) )
+
       this.setState({ zipCode: e.target.value })
     } else {
-      alert('Not a valid Zip code.');
+      this.setState({ cities: [] });
+      //alert('Not a valid Zip code.');
     }
   }
 
   render() {
-    console.log(this.state.cities);
-    const contentDisplay = (Array.isArray(this.state.cities) && this.state.cities.length)  ? this.state.cities.map(obj => <City key={obj.RecordNumber} name={obj.LocationText} state={obj.State} lat={obj.Lat} long={obj.Long} pop={obj.EstimatedPopulation} tw={obj.TotalWages} />) : <p className="Input-container">No results</p>
+    const contentDisplay = this.state.cities.length  ? this.state.cities.map(obj => <City key={obj.RecordNumber} name={obj.LocationText} state={obj.State} lat={obj.Lat} long={obj.Long} pop={obj.EstimatedPopulation} tw={obj.TotalWages} />) : <p className="Input-container">No results</p>
 
     return (
       <div className="App">
         <div className="App-header">
           <h2>Zip Code Search</h2>
         </div>
-        <ZipSearchField onZipChange={(e) => this.zipChanged(e)} />
+        <ZipSearchField onZipChange={ (e) => this.zipChanged(e) } />
         <div>
-          {
-            contentDisplay
-          }
+          { contentDisplay }
         </div>
       </div>
     );

@@ -10,6 +10,7 @@
   margin-bottom: 20px;
   color: white;
   text-align: center;
+  
 }
 
 .Input-container {
@@ -33,14 +34,14 @@
   justify-content:space-evenly;
   border: 2px solid rgb(231, 231, 231);
   border-radius: 4px;
-  width: fit-content;
+  width: 400px;
   box-shadow:2px 2px 2px rgba(184, 184, 184, 0.137);
 }
 
 .City-name{
   background: linear-gradient(rgb(240, 240, 240),  rgb(224, 224, 224));
   padding: 10px 15px;
-  width: 320px;
+  width: 100%;
   font-weight:600;
 }
 
